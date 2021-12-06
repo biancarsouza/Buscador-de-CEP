@@ -28,7 +28,7 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
         setState(response.data.state);
         setCity(response.data.city);
         setDistrict(response.data.district);
-        setAdress(response.data.adress);
+        setAdress(response.data.address);
       })
   }
 
@@ -36,15 +36,44 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
 
     <Container onSubmit={handleSearchNewCep}>
 
-      <InputMask mask="99999-999" placeholder="Digite aqui o CEP" value={cep} onChange={event => setCep(event.target.value)} />;
+      <span>
+        
+        <InputMask mask="99999-999" placeholder="Digite aqui o CEP!" value={cep} className="input" onChange={event => setCep(event.target.value)} />
+        <button type="submit" onClick={searchCep}>Buscar CEP</button>
 
-      <button type="submit" onClick={searchCep}>Cadastrar</button>
+      </span>
 
-      <h1>{code}</h1>
-      <h1>{state}</h1>
-      <h1>{city}</h1>
-      <h1>{district}</h1>
-      <h1>{adress}</h1>
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>CEP</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Endereço</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>{code}</td>
+            <td>{state}</td>
+            <td>{city}</td>
+            <td>{district}</td>
+            <td>{adress}</td>
+
+          </tr>
+
+        </tbody>
+
+    </table>
 
     </Container>
 

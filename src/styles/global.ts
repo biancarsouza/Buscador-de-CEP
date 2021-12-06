@@ -4,11 +4,13 @@ export const GlobalStyle = createGlobalStyle`
 
     :root {
 
-        --background: #222629;
-        --button-background: #0677A1;
-        --text-area-background: #D6D6D6;
+        --background: #182F52;
+        --table: #FFFFFF;
+        --table-text: #000000;
+        --button-background: #44A3CF;
+        --text-area-background: #E9E9E9;
         --button-text: #FFFFFF;
-        --text-area-text: #777777;
+        --text-area-text: #676767;
 
     }
 
@@ -20,6 +22,12 @@ export const GlobalStyle = createGlobalStyle`
 
         background: var(--background);
         font-family: 'Poppins', sans-serif;
+
+        border-radius: 0.5rem;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
 
     }
 
