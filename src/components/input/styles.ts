@@ -72,20 +72,27 @@ export const Container = styled.form`
         }
     }
 
-    .add {
-
-        line-height: 0.5rem;
-        font-size: 1.2rem;
-        margin-right: 1rem;
-
-    }
-
     .clear {
 
         line-height: 0.5rem;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
 
     }
-    
+
+    span {
+
+        display: flex;
+
+        p {
+
+            color: var(--table);
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-right: 3rem;
+
+        }
+
+    }
 
 `

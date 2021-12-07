@@ -44,26 +44,27 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
         const route = response.data;
 
         setRoutes([
+          ...routes,
           route,
         ]);
 
       })
   }
 
-  function handleAddList() {
+  // function handleAddList() {
 
-    localStorage.setItem("list", JSON.stringify(routes));
-    console.log(data);
+  //   localStorage.setItem("list", JSON.stringify(routes));
+  //   console.log(data);
     
-  }
+  // }
 
   function handleClearList() {
 
-    localStorage.clear();
+    setRoutes([]);
     
   }
   
-  const data = JSON.parse(localStorage.getItem("list") || "[]");
+  // const data = JSON.parse(localStorage.getItem("list") || "[]");
 
   return (
 
@@ -109,9 +110,9 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
       </table>
 
       <span>
-        
-        <button type="submit" className="add" onClick={handleAddList}>Adicionar à lista</button>
-        <button type="submit" className="clear" onClick={handleClearList}>Limpar a lista</button>
+
+        <p>Histórico</p>
+        <button type="submit" className="clear" onClick={handleClearList}>Limpar o histórico</button>
 
       </span>
 
@@ -133,14 +134,14 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
 
         <tbody>
 
-          {data.map((routes: any) => (
+          {routes.map((route: any) => (
 
-            <tr key={routes.code}>
-              <td>{routes.code}</td>
-              <td>{routes.state}</td>
-              <td>{routes.city}</td>
-              <td>{routes.district}</td>
-              <td>{routes.address}</td>
+            <tr key={route.code}>
+              <td>{route.code}</td>
+              <td>{route.state}</td>
+              <td>{route.city}</td>
+              <td>{route.district}</td>
+              <td>{route.address}</td>
             </tr>
               
           ))}
