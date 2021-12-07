@@ -31,7 +31,7 @@ $ yarn start
 ```bash
 $ Compiled successfully!
 $
-$ You can now view desafio-pd in the browser.
+$ You can now view Buscador-de-CEP in the browser.
 $
 $   Local:            http://localhost:3000
 $   On Your Network:  http://192.168.10.15:3000
