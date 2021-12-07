@@ -36,6 +36,15 @@ export const Container = styled.form`
         font-size: 1.5rem;
         text-align: center;
 
+        cursor: pointer;
+        transition: 300ms;
+
+        &:hover {
+
+            filter: brightness(0.8);
+
+        }
+
     }
 
     table {
@@ -51,6 +60,9 @@ export const Container = styled.form`
         }
 
         td {
+            
+            line-height: 1rem;
+            height: 2.5rem;
             padding: 0.5rem;
             border: 0;
             background: var(--table);
@@ -58,6 +70,21 @@ export const Container = styled.form`
             color: var(--table-text);
             border-radius: 0.25rem;
         }
+    }
+
+    .add {
+
+        line-height: 0.5rem;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+
+    }
+
+    .clear {
+
+        line-height: 0.5rem;
+        font-size: 1.2rem;
+
     }
     
 
