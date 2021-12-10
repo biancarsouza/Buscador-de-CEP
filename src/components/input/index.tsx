@@ -16,7 +16,7 @@ interface Route {
 
 }
 
-export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputElement> | undefined; value: string | number | readonly string[] | undefined; }) {
+export function CEPInput(props: { onChange: React.ChangeEventHandler<HTMLInputElement> | undefined; value: string | number | readonly string[] | undefined; }) {
 
   const [cep, setCep] = useState('');
 
@@ -86,8 +86,6 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
     <Container onSubmit={handleSearchNewCep}>
 
       <span>
-        
-
 
         <InputMask mask="99999-999" placeholder="Digite aqui o CEP!" value={cep} className="input" onChange={event => setCep(event.target.value)} />
         <button type="submit" onClick={searchCep}>Buscar CEP</button>

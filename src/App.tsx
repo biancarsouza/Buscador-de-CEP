@@ -1,4 +1,4 @@
-import { DateInput } from './components/input';
+import { CEPInput } from './components/input';
 import { GlobalStyle } from './styles/global';
 import { ToastContainer } from 'react-toastify';
 
@@ -18,7 +18,7 @@ export function App() {
         draggable
         pauseOnHover
         />
-        <DateInput onChange={undefined} value={undefined} />
+        <CEPInput onChange={undefined} value={undefined} />
         <GlobalStyle />
       </>
 
