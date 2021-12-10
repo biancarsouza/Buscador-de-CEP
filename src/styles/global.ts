@@ -31,4 +31,12 @@ export const GlobalStyle = createGlobalStyle`
 
     }
 
+    .toast {
+
+        color: var(--button-text);
+        font-weight: bold;
+        background: transparent !important;
+
+    }
+
 `

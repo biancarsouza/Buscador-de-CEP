@@ -1,7 +1,10 @@
 import axios from "axios";
+import { toast } from 'react-toastify';
 import React, { useState, FormEvent } from "react";
 import InputMask from "react-input-mask";
 import { Container } from "./styles";
+
+import 'react-toastify/dist/ReactToastify.min.css';
 
 interface Route {
 
@@ -43,35 +46,49 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
 
         const route = response.data;
 
-        setRoutes([
-          ...routes,
-          route,
-        ]);
+        if (response.data.code === undefined) {
+          toast.error("Digite um CEP válido.", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            className: 'toast',
+          });
+          return;
+        }
+
+        else {
+          setRoutes([
+            ...routes,
+            route,
+          ]);
+        }
 
       })
   }
 
-  // function handleAddList() {
-
-  //   localStorage.setItem("list", JSON.stringify(routes));
-  //   console.log(data);
-    
-  // }
-
   function handleClearList() {
 
     setRoutes([]);
+    setCode([]);
+    setState([]);
+    setCity([]);
+    setDistrict([]);
+    setAdress([]);
     
   }
   
-  // const data = JSON.parse(localStorage.getItem("list") || "[]");
-
   return (
 
     <Container onSubmit={handleSearchNewCep}>
 
       <span>
         
+
+
         <InputMask mask="99999-999" placeholder="Digite aqui o CEP!" value={cep} className="input" onChange={event => setCep(event.target.value)} />
         <button type="submit" onClick={searchCep}>Buscar CEP</button>
 

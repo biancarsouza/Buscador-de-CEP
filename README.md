@@ -8,6 +8,8 @@ Ele retorna as seguintes informações (nem todos os CEPs retornam as cinco): <b
 • Cidade; <br />
 • Bairro; <br />
 • Rua.  <br />
+<br />
+Essa versão conta com um histórico de rotas que, assim que a página é recarregada, ele é reiniciado. Mas, caso ele fique muito extenso e a pessoa queira apagá-lo, existe um botão para isso.
 
 ## Instalação
 1 - Caso você tenha o [git](https://git-scm.com) instalado no seu computador, execute o código abaixo no terminal. Caso contrário, você pode fazer o download do arquivo ZIP clicando no botão "code" em cima da seção com os arquivos do programa.
